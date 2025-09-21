@@ -47,8 +47,89 @@ form .display input {
     flex: 1;
     font-size: 45px;
     box-shadow: none;
+    overflow-x: auto;         /* Enable horizontal scrolling */
+    white-space: nowrap;      /* Prevent wrapping */
+    direction: ltr;           /* Ensure left-to-right scroll */
+    padding-right: 8px;       /* Optional: space for scrollbar */
+    /* Hide scrollbar for Webkit browsers */
+    scrollbar-width: none;    /* Firefox */
+}
+form .display input::-webkit-scrollbar {
+    display: none;            /* Chrome, Safari */
 }
 
 form input.equal{
     width: 145px;
+}
+
+/* Responsive styles */
+@media (max-width: 400px) {
+    .calculator {
+        padding: 10px;
+        border-radius: 6px;
+    }
+    .calculator form input {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+        margin: 5px;
+        border-radius: 6px;
+    }
+    form .display input {
+        font-size: 22px;
+    }
+    form input.equal {
+        width: 80px;
+    }
+}
+
+@media (max-width: 250px) {
+    .calculator form input {
+        width: 25px;
+        height: 25px;
+        font-size: 10px;
+        margin: 2px;
+    }
+    form .display input {
+        font-size: 14px;
+    }
+    form input.equal {
+        width: 55px;
+    }
+}
+
+@media (min-width: 401px) and (max-width: 600px) {
+    .calculator {
+        padding: 15px;
+    }
+    .calculator form input {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+        margin: 7px;
+    }
+    form .display input {
+        font-size: 28px;
+    }
+    form input.equal {
+        width: 110px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .calculator {
+        padding: 40px;
+    }
+    .calculator form input {
+        width: 80px;
+        height: 80px;
+        font-size: 28px;
+        margin: 15px;
+    }
+    form .display input {
+        font-size: 60px;
+    }
+    form input.equal {
+        width: 190px;
+    }
 }
